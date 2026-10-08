@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8" />
+        <title>ようこそ</title>
+        <link rel="icon" type="image/jpg" href="images/icon.jpg" />
+        <style>
+        a,a:visited {
+            color: blue;
+        }
+        </style>
+    </head>
+    <body>
+        <header></header>
+            <img src="images/Tux.svg" alt="ペンギン" width="60" height="90" />
+            <h2>
+                <span id = "calendar">カレンダー</span>
+                <span id = "clock">カレンダー</span>
+            </h2>
+            <span><a href="bookmark.html">ブックマーク</a></span>
+            <br />
+            <span><a href="https://ja.wikipedia.org/wiki/Special:Random">Wikipedia</a></span>
+            <br />
+            <span><a href="https://www.window-swap.com/Window">カメラ</a></span>
+            <br />
+            <span><a href="http://localhost:3000">WorkLog</a></span>
+            <br />
+            <span><a href="http://127.0.0.1:8000/">manual-web</a></span>
+            <br />
+            <span><a href="memo.html">メモ</a></span>
+            <br />
+            <h2>東京</h2>
+            <h3 id="weather">天気を取得...</h3>
+            <br />
+
+            <script>
+                function calendar() {
+                    const now = new Date();
+
+                    const month = String(now.getMonth() + 1);
+                    const date = String(now.getDate());
+
+                    const dayCode = now.getDay();
+                    const dayText = parseDayCode(dayCode);
+
+                    document.getElementById("calendar").textContent =`${month}月${date}日--${dayText}曜日--`
+                }
+
+                function parseDayCode(code) {
+                    switch (code) {
+                        case 0:
+                            return "日";
+                        case 1:
+                            return "月";
+                        case 2:
+                            return "火";
+                        case 3:
+                            return "水";
+                        case 4:
+                            return "木";
+                        case 5:
+                            return "金";
+                        case 6:
+                            return "土";
+                    }
+                }
+
+                calendar();
+            </script>
+
+            <script>
+                async function getWeather() {
+                    const latitude = 35.6895;
+                    const longitude = 139.6917;
+
+                    const url =
+                        `https://api.open-meteo.com/v1/forecast` +
+                        `?latitude=${latitude}` +
+                        `&longitude=${longitude}` +
+                        `&current=temperature_2m,weather_code` +
+                        `&timezone=Asia%2FTokyo`;
+
+                    const response = await fetch(url);
+                    const data = await response.json();
+
+                    const temperature = data.current.temperature_2m;
+                    const weatherCode = data.current.weather_code;
+
+                    const weatherText = getWeatherText(weatherCode);
+
+                    document.getElementById("weather").textContent =
+                        `${temperature}℃ ${weatherText}`;
+                }
+
+                getWeather();
+            </script>
+
+            <script>
+                function getWeatherText(code) {
+                    switch (code) {
+                        default:
+                          return "Undefined";
+                        case 0:
+                            return "clear sky";
+                        case 1:
+                            return "Mainly clear";
+                        case 2:
+                            return "Partly cloudy";
+                        case 3:
+                            return "Overcast";
+                        case 45:
+                            return "Fog";
+                        case 48:
+                            return "Depositing rime fog";
+                        case 51:
+                            return "Light drizzle";
+                        case 53:
+                            return "Moderate drizzle";
+                        case 55:
+                            return "Dense drizzle";
+                        case 56:
+                            return "Light freezing drizzle";
+                        case 57:
+                            return "Dense freezing drizzle";
+                        case 61:
+                            return "Slight rain";
+                        case 63:
+                            return "Moderate rain";
+                        case 65:
+                            return "Heavy rain";
+                        case 66:
+                            return "Light freezing rain";
+                        case 67:
+                            return "Heavy freezing rain";
+                        case 71:
+                            return "Slight snowfall";
+                        case 73:
+                            return "Moderate snowfall";
+                        case 75:
+                            return "Heavy snowfall";
+                        case 77:
+                            return "Snow grains";
+                        case 80:
+                            return "Slight rain showers";
+                        case 81:
+                            return "Moderate rain showers";
+                        case 82:
+                            return "Violent rain showers";
+                        case 85:
+                            return "Slight snow showers";
+                        case 86:
+                            return "Heavy snow showers";
+                        case 95:
+                            return "Thunderstorm";
+                        case 96:
+                            return  "Thunderstorm with slight hail";
+                        case 97:
+                            return  "Heavy thunderstorm";
+                        case 99:
+                            return "Thunderstorm with heavy hail";
+                    }
+                }
+            </script>
+
+            <script>
+                function updateClock() {
+                    const now = new Date();
+
+                    const hours = String(now.getHours()).padStart(2, "0");
+                    const minutes = String(now.getMinutes()).padStart(2, "0");
+                    const seconds = String(now.getSeconds()).padStart(2, "0");
+
+                    document.getElementById("clock").textContent =
+                        `${hours}:${minutes}:${seconds}`;
+                }
+
+                updateClock();
+                setInterval(updateClock, 1000);
+            </script>
+        </main>
+        <footer></footer>
+    </body>
+</html>
