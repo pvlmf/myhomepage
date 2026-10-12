@@ -1,51 +1,21 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <title>メモ</title>
-        <link rel="icon" type="image/jpg" href="images/icon.jpg" />
+        <script src="js/test-page.js" defer></script>
+        <link rel="icon" type="image/jpg" href="/images/icon.jpg" />
     </head>
     <body>
-        <header></header>
-        <main>
-            <h2>メモ</h2>
+        <h2>メモ</h2>
 
-            <textarea id="memo" rows="30" cols="100" placeholder=""></textarea>
+        <textarea id="memo-input" rows="30" cols="100" placeholder=""></textarea>
 
-            <br />
+        <br />
 
-            <button id="saveMemo">保存</button>
-            <button id="clearMemo">消去</button>
+        <button id="saveMemo">保存</button>
+        <button id="clearMemo">消去</button>
 
-            <p id="memoStatus"></p>
-
-            <script>
-                const memo = document.getElementById("memo");
-                const saveMemo = document.getElementById("saveMemo");
-                const clearMemo = document.getElementById("clearMemo");
-                const memoStatus = document.getElementById("memoStatus");
-
-                const savedMemo = localStorage.getItem("memo");
-
-                if (savedMemo !== null) {
-                    memo.value = savedMemo;
-                }
-
-                saveMemo.addEventListener("click", function () {
-                    localStorage.setItem("memo", memo.value);
-
-                    memoStatus.textContent = "保存しました";
-                });
-
-                clearMemo.addEventListener("click", function () {
-                    memo.value = "";
-
-                    localStorage.removeItem("memo");
-
-                    memoStatus.textContent = "消去しました";
-                });
-            </script>
-        </main>
-        <footer></footer>
+        <p id="save-status"></p>
     </body>
 </html>
