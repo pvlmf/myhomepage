@@ -1,19 +1,20 @@
 ポートフォリオ
-年賀状
+年賀状-ndsをビルド-Cで
+chromiumのフォーク-有線接続できるところで
+sptarkov-modpack
 仮想ピアノ
-街歩きunity-樫野埼灯台-unityエフェクトの本
+音声パイプ
+udev
+街歩き-unityで樫野埼灯台プロトタイプ-エフェクトの本-3DSで開発-unityでプロトタイプ->C++に移植
 csボット
 KDEPlasmaのカスタムウィジェット-Plasmoidというらしい
-ホームページ
-udev
-Node.js, Next.js, C, HLSL, rust
-3DSソフト-rust
+Node.js, Next.js, HLSL, rust
 Linuxカーネル
 暗黒騎士
 PSOの武器など
 桜吹雪
 ディストリビューション3Dモデル
 単語アプリ
-ガラケー自作？タブレットで妥協？
+タッチのパソコン
 フィギュア
 漢検
