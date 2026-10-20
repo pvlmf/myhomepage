@@ -1,1 +1,0 @@
-/home/pvlmf/pCloudDrive/promptos/AGENTS.md
