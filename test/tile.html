@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <title>タイル表示のテスト</title>
+        <script type ="module" src="/js/main.js"></script>
+        <script src="/js/memo.js" defer></script>
         <link rel="icon" type="image/jpg" href="/images/icon.jpg" />
         <link rel="stylesheet" href="/css/tile.css" />
     </head>
@@ -11,15 +13,80 @@
         <main>
             <div class="tiles">
                 <div class="tile">
-                    <a href="https://example.com">1</a>
+                    <img src="/images/Tux.svg" alt="ペンギン" width="60" height="90" />
+                    <h2>
+                        <span id = "calendar">カレンダー</span>
+                        <span id = "clock">時計</span>
+                    </h2>
+                    <span><img src="/images/black.png" alt="暗黒騎士" width="200" height="225" /></span>
+                    <br />
+                    <br />
+                    <span><a href="/bookmark/index.html">ブックマーク</a></span>
+                    <br />
+                    <span><a href="https://ja.wikipedia.org/wiki/Special:Random">Wikipedia</a></span>
+                    <br />
+                    <span><a href="https://www.window-swap.com/Window">カメラ</a></span>
+                    <br />
+                    <span><a href="http://localhost:3000">WorkLog</a></span>
+                    <br />
+                    <span><a href="/memo.html">メモ</a></span>
+                    <br />
+                    <h2>東京</h2>
+                    <h3 id="weather">天気を取得...</h3>
                 </div>
 
                 <div class="tile">
-                    <a href="https://example.com">2</a>
+                    <h2>メモ</h2>
+
+                    <textarea id="memo-input" rows="40" cols="85" placeholder=""></textarea>
+
+                    <br />
+                    <br />
+
+                    <button id="saveMemo">保存</button>
+                    <button id="clearMemo">消去</button>
+
+                    <p id="save-status"></p>
                 </div>
 
                 <div class="tile">
-                    <a href="https://example.com">3</a>
+                    <br>
+                    <h3><a href="/bookmark/game.html">ゲーム</a></h3>
+                    <h3><a href="/bookmark/free-bgm.html">フリーBGM</a></h3>
+                    <h3><a href="/bookmark/assets.html">アセット</a></h3>
+                    <h3><a href="/bookmark/linux.html">Linux</a></h3>
+                    <br>
+                    <h3><a href="https://github.com/">GitHub</a></h3>
+                    <h3><a href="https://github.com/peter-norio/JavaScript-API/tree/main/indexeddb-sample">indexedDB</a></h3>
+                    <h3><a href="https://qiita.com/kyabetsuda/items/384a57ff6b7250de40ad">同期処理、並列処理</a></h3>
+                    <br>
+                    <h3><a href="https://www.youtube.com/feed/you">Youtube</a>---動画---<a href="https://www.nicovideo.jp/video_top">ニコニコ</a></h3>
+                    <h3><a href="https://www.reddit.com/">Reddit</a></h3>
+                    <h3><a href="https://chatgpt.com/ja-JP/">ChatGPT</a>---AI---<a href="https://gemini.google.com/app">Google Gemini</a></h3>
+                    <br>
+                    <h3><a href="https://www.amazon.co.jp/">Amazon</a> #買い物</h3>
+                    <br>
+                    <h3><a href="https://zenn.dev/kinokov/articles/56c6edd8f44db5">Rustを使って3DSソフトを開発する</a></h3>
+                    <h3><a href="https://ja.javascript.info/">javascript</a> #チュートリアル</h3>
+                    <h3><a href="https://qiita.com/tags/html?page=6">qiita-html</a></h3>
+                    <h3><a href="https://open-meteo.com/en/docs?utm_source=chatgpt.com">Weather Forecast API</a><a href="https://developer.mozilla.org/ja/"> Webリファレンス</a></h3>
+                    <br>
+                    <h3><a href="https://3ds.hacks.guide/ctrtransfer.html">ctrtransfer</a></h3>
+                    <br>
+                    <h3><a href="https://kuwana-inabe.goguynet.jp/2021/06/19/aeonkuwana-funsui/">イオンモール桑名 音と光の噴水ショー</a></h3>
+                    <h3><a href="https://www.startpage.com/do/search?q=%E5%BB%BA%E7%89%A9%E3%83%A2%E3%83%87%E3%83%AA%E3%83%B3%E3%82%B0&amp;segment=startpage.vivaldi">Startpage検索（建物モデリング）</a></h3>
+                    <h3><a href="https://www.capa.co.jp/archives/50705">キャパ「3Dモデル作り方・建物モデリングの基本ステップ」</a></h3>
+                    <br>
+                    <h3><a href="https://www.highwaybus.com/gp/reference/refCertification?refCertSelected=selected">バス</a></h3>
+                    <br>
+                    <h3><a href="https://qr.quel.jp/url.php">URLtoQRCode</a></h3>
+                    <br>
+                    <h3><a href="https://www.onlinemictest.com/ja/keyboard-test/">キーボードテスト</a></h3>
+                    <br>
+                    <h3><a href="https://bpm.mononichi.com">BPMカウンター</a></h3>
+                    <h3><a href="https://blog.ameba.jp/ucs/top.do">アメーバブログ</a></h3>
+                    <h3><a href="/bookmark/kashinozaki.html">樫野崎灯台</a></h3>
+                    <br>
                 </div>
             </div>
         </main>
