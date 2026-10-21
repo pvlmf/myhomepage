@@ -1,4 +1,4 @@
-function calendar() {
+export function calendar() {
     const now = new Date();
 
     const month = String(now.getMonth() + 1);
@@ -28,5 +28,3 @@ function parseDayCode(code) {
             return "土";
     }
 }
-
-calendar();
