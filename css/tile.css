@@ -15,4 +15,5 @@ a,a:visited {
 
 .tile {
     overflow-y: auto;
+    scrollbar-width: none;
 }
