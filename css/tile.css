@@ -16,7 +16,6 @@ a,a:visited {
 .tile {
     overflow-y: auto;
     scrollbar-width: none;
-    overflow: hidden;
 }
 
 .tile iframe {
