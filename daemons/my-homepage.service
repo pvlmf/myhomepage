@@ -1,0 +1,12 @@
+[Unit]
+Description=homepage for my browser
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -m http.server 8989 --bind 127.0.0.1 --directory /home/pvlmf/Projects/myhomepage
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

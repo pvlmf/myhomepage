@@ -1,0 +1,15 @@
+[Unit]
+Description=worklog
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pvlmf/Projects/worklog
+ExecStart=/home/pvlmf/Projects/worklog/start.sh
+EnvironmentFile=-/home/pvlmf/Projects/worklog/.env
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+SyslogIdentifier=worklog
+
+[Install]
+WantedBy=default.target
